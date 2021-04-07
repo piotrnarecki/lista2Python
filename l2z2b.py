@@ -2,6 +2,9 @@ from vector2d import Vector2d
 
 
 def main():
+
+    print"test"
+
     print "correct vector:"
     correctVector = Vector2d(-6.9, 42)
     correctVector.printVector()

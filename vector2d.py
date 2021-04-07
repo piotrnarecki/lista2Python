@@ -1,7 +1,7 @@
 class Vector2d:
 
     def __init__(self, *arguments):
-        if len(arguments)==2:
+        if len(arguments) == 2:
             try:
                 try:
                     self.x = float(arguments[0])
@@ -29,7 +29,7 @@ class Vector2d:
             print "can not print vector"
 
     def multiplyVector(self, *arguments):
-        if len(arguments)==1:
+        if len(arguments) == 1:
             try:
                 factor = float(arguments[0])
                 mulitipliedVector = Vector2d(self.x * factor, self.y * factor)

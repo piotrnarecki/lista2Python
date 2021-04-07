@@ -2,9 +2,6 @@ from vector2d import Vector2d
 
 
 def main():
-
-    print"test"
-
     print "correct vector:"
     correctVector = Vector2d(-6.9, 42)
     correctVector.printVector()
@@ -45,11 +42,10 @@ def main():
     print
 
     print "to much arguments vector:"
-    toMuchArgumentsVector = Vector2d(2,3,4)
+    toMuchArgumentsVector = Vector2d(2, 3, 4)
     toMuchArgumentsVector.printVector()
     print toMuchArgumentsVector.vectorLength()
     print
-
 
 
 if __name__ == '__main__':

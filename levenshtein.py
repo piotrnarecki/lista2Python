@@ -1,4 +1,4 @@
-#https://blog.paperspace.com/implementing-levenshtein-distance-word-autocomplete-autocorrect/
+# https://blog.paperspace.com/implementing-levenshtein-distance-word-autocomplete-autocorrect/
 def calculateDistance(token1, token2):
     import numpy
     distances = numpy.zeros((len(token1) + 1, len(token2) + 1))

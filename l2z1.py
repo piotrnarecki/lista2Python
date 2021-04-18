@@ -1,20 +1,20 @@
-def fileToWords(filePath):
-    file = open(filePath, "rt")
+def file_to_words(file_path):
+    file = open(file_path, "rt")
     data = file.read()
     words = data.split()
     file.close()
     return words
 
 
-def checkAllWords(words, exemplaryWord, threshold):
+def check_all_words(words, exemplary_word, threshold):
     import levenshtein
-    wordsList = []
+    words_list = []
     for i in range(0, len(words)):
-        distance = levenshtein.calculateDistance(words[i], exemplaryWord)
+        distance = levenshtein.calculate_distance(words[i], exemplary_word)
         if (distance <= threshold):
-            wordsList.append(words[i])
+            words_list.append(words[i])
 
-    return wordsList
+    return words_list
 
 
 def main():
@@ -23,19 +23,19 @@ def main():
     if len(sys.argv) is 4:
 
         try:
-            filePath = sys.argv[1]
-            # filePath = "/Users/piotrnarecki/Desktop/text1.txt"
-            exemplaryWord = sys.argv[2].upper()
+            file_path = sys.argv[1]
+            # file_path = "/Users/piotrnarecki/Desktop/text1.txt"
+            exemplary_word = sys.argv[2].upper()
             try:
                 threshold = int(sys.argv[3])
                 if threshold > 0:
 
-                    words = fileToWords(filePath)
-                    wordsList = checkAllWords(words, exemplaryWord, threshold)
+                    words = file_to_words(file_path)
+                    words_list = check_all_words(words, exemplary_word, threshold)
 
-                    print 'exemplary word: ', exemplaryWord
-                    print 'threshold: ', threshold
-                    print wordsList
+                    print ('exemplary word: ', exemplary_word)
+                    print ('threshold: ', threshold)
+                    print (words_list)
 
                 else:
                     print ('treshold should greather than 0')
@@ -48,16 +48,16 @@ def main():
     elif (len(sys.argv) is 3):
 
         try:
-            filePath = sys.argv[1]
-            exemplaryWord = sys.argv[2].upper()
+            file_path = sys.argv[1]
+            exemplary_word = sys.argv[2].upper()
             threshold = 1
-            words = fileToWords(filePath)
+            words = file_to_words(file_path)
 
-            wordsList = checkAllWords(words, exemplaryWord, threshold)
+            words_list = check_all_words(words, exemplary_word, threshold)
 
-            print 'exemplary word: ', exemplaryWord
-            print 'threshold: ', threshold
-            print wordsList
+            print ('exemplary word: ', exemplary_word)
+            print ('threshold: ', threshold)
+            print (words_list)
 
         except IOError:
             print ('this file does not exist')
